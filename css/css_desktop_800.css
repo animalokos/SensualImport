@@ -1,0 +1,224 @@
+/* HHHHHHHHHHH MEDIA 805 HHHHHHHHHHHHHHHHHHHHHH MEDIA 805 HHHHHHHHHHHHHHHHHHHHHH MEDIA 805 HHHHHHHHHHH */
+.chamadas {
+  display: block; }
+
+.coluna_esquerda {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+
+div.box_template {
+  margin: 0 auto 20px 20px; }
+
+#breadcrumb {
+  width: 80%; }
+
+/* ========================== menu vertical completo JOSE*/
+/* ========================== menu desktop */
+#menu_lateral_mobile {
+  display: none; }
+
+.box_categories {
+  margin: 0;
+  padding: 0; }
+
+.box_categories .content {
+  width: 220px;
+  font-size: 15px;
+  font-weight: lighter; }
+  .box_categories .content:before {
+    content: '';
+    display: block; }
+  .box_categories .content:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .box_categories .content a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none; }
+  .box_categories .content ul {
+    width: 220px; }
+    .box_categories .content ul li a:hover {
+      color: #fff;
+      background: #920c16;
+      font-weight: lighter;
+      font-style: italic;
+      font-size: 13px; }
+    .box_categories .content ul li:hover {
+      position: relative;
+      z-index: 599;
+      cursor: default; }
+      .box_categories .content ul li:hover ul {
+        visibility: visible; }
+      .box_categories .content ul li:hover a {
+        background: #920c16;
+        font-weight: lighter;
+        font-style: italic;
+        font-size: 13px; }
+    .box_categories .content ul ul {
+      visibility: hidden;
+      position: absolute;
+      z-index: 598;
+      top: 0px;
+      left: 95%;
+      width: 220px; }
+      .box_categories .content ul ul li a:hover {
+        background: #530201;
+        font-weight: normal;
+        font-size: 14px; }
+
+/* === === === === === === === === == box page lateral */
+.box_pages {
+  display: block; }
+
+/* === === === === === === === === == box login lateral */
+.box_login {
+  display: block;
+  background-color: #920c16; }
+  .box_login .title {
+    display: block; }
+  .box_login .content {
+    display: block; }
+
+/* === === === === === === === === == corpo login */
+/* === === === === === === === === == box template conteudo----- */
+.box_template {
+  background-color: #fff; }
+  .box_template:hover {
+    background-color: #eee; }
+
+/* === === === === === === === === == corpo compra */
+#shoppingCart #htmlCart tr td {
+  min-height: 100px; }
+
+#shoppingCart #shippingBox {
+  display: none; }
+
+#shoppingCart #compreJunto {
+  display: none; }
+
+#shoppingCart #discountExclusive {
+  display: none; }
+
+#shoppingCart #ordertotals {
+  display: none; }
+
+.btn-checkout {
+  height: 40px; }
+
+#checkout {
+  padding-bottom: 20px; }
+
+#checkout .texto12 tr td {
+  display: none; }
+
+#checkout #item_cabecalho {
+  font-size: 18px;
+  padding: 3px; }
+
+#checkout .tit {
+  color: #f03; }
+
+#checkOut span.active {
+  color: #fff;
+  background-color: #920c16; }
+
+#checkOut .step {
+  border: 1px solid #b8b8b8;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-block;
+  width: 49%;
+  min-height: 405px;
+  vertical-align: top; }
+
+#checkOut .step .tit {
+  background-color: #b8b8b8;
+  color: #000;
+  padding: 20px; }
+
+#checkOut .step .tit.active {
+  background: none;
+  background-color: #26C281;
+  color: #fff; }
+
+#checkout .box {
+  border: 1px solid #b8b8b8;
+  border-radius: 8px; }
+
+#checkout .campo_textarea {
+  border: none; }
+
+#checkOut .step .orderPayment {
+  padding: 20px;
+  border: 1px solid #b8b8b8;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 20px; }
+
+#checkOut .step #item_cabecalho {
+  color: #000; }
+
+.box_address {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 15px; }
+
+/* === === === === === === === === == pagina dos produtos */
+.texto_cabecalho_pagina .header {
+  width: 47%;
+  min-width: 280px;
+  display: inline-block;
+  text-align: left; }
+
+.texto_cabecalho_pagina .header h1 {
+  font-size: 20px;
+  padding: 0 0 0 20px; }
+
+.texto_cabecalho_pagina .order {
+  width: 47%;
+  display: inline-block;
+  text-align: right;
+  margin-top: 0px; }
+
+#fones {
+  text-align: left; }
+
+/*
+    #detalhe_produto > table:nth-child(1) {
+        width: 90% !important;
+        height: 500px!important;
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+    #product_gallery {
+        width: 53% !important;
+        display: block;
+    }#product_gallery li {
+        display: block;
+    }#product_gallery img {
+        width: 300px!important;
+        height: 300px!important;
+    }.etalage_small_thumbs {
+        width: 100% !important;
+        top: 330px!important;
+    }.etalage_small_thumbs > ul: nth-child(1) > li > img {
+        max-width: 9vw!important;
+        max-height: 9vw!important;
+        max-width: 100px!important;
+        max-height: 100px!important;
+    }
+    .breve_descricao {
+        font-size: 1.5em;
+    }
+    #detalhe_produto > table: nth-child(1) > tbody: nth-child(1) > tr: nth-child(1) > td {
+        display: table - cell;
+        padding: 0!important;
+        margin: auto;
+        text-align: left;
+    }
+    */

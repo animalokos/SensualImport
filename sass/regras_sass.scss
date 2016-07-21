@@ -1,0 +1,22 @@
+$verm_sensual: #f03;
+$verm_header: #c4082d;
+$verm_medio: #920c16;
+$verm_escuro: #530201;
+
+$cinza-claro: #424242;
+$cinza-escuro: #222;
+
+@mixin gradiente($cor_base, $cor1, $cor2) {
+    background: $cor_base; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($cor1, $cor2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($cor1, $cor2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($cor1, $cor2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($cor1, $cor2); /* Standard syntax (must be last) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
