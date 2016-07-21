@@ -35,10 +35,10 @@ gulp.task('sass', function () {
 /** Configuration {{ F T P }}  **/
 var user = process.env.FTP_USER;  
 var password = process.env.FTP_PWD;  
-var host = 'your hostname or ip address';  
-var port = 21;  
-var localFilesGlob = ['./**/*'];  
-var remoteFolder = '/myApp'
+var host = 'https://sensualimport.wc2.securestore.global/admin/includes/elementos/igerfiles/dialog.php';  
+var port = 21; 
+var localFilesGlob = ['./mini/*'];  
+var remoteFolder = '/'
 
 // helper function to build an FTP connection based on our configuration
 function getFtpConnection() {  
