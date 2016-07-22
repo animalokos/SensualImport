@@ -7,7 +7,8 @@ var watch = require('gulp-watch');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
-var ftp = require( 'vinyl-ftp' );
+var ftp = require( 'vinyl-ftp' );//não estou usando
+var git = require('gulp-git');
 
 gulp.task('scripts', function () {
 	return gulp
@@ -32,32 +33,29 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./css'));
 });
 
-/** Configuration {{ F T P }}  **/
-var user = process.env.FTP_USER;  
-var password = process.env.FTP_PWD;  
-var host = 'https://sensualimport.wc2.securestore.global/admin/includes/elementos/igerfiles/dialog.php';  
-var port = 21; 
-var localFilesGlob = ['./mini/*'];  
-var remoteFolder = '/'
+/** =========== GIT  ================== **/
 
-// helper function to build an FTP connection based on our configuration
-function getFtpConnection() {  
-    return ftp.create({
-        host: host,
-        port: port
-        user: user,
-        password: password,
-        parallel: 5,
-        log: gutil.log
-    });
-}
+gulp.task('clone', function(){
+  git.clone('https://github.com/animalokos/SensualImport.git', function (err) {
+    if (err) throw err;
+  });
+});
 
-gulp.task('ftp-deploy', function() {
-    var conn = getFtpConnection();
-    return gulp.src(localFilesGlob, { base: '.', buffer: false })
-        .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
-        .pipe( conn.dest( remoteFolder ) )
-    ;
+gulp.task('commit', function(){
+  return gulp.src('./../SIte_sensual_2016/**/*')
+    .pipe(git.commit());
+});
+
+gulp.task('pull', function(){
+  git.pull('origin', 'master', {args: '--rebase'}, function (err) {
+    if (err) throw err;
+  });
+});
+
+gulp.task('push', function(){
+  git.push('git@github.com:animalokos/SensualImport.git', 'master', function (err) {
+    if (err) throw err;
+  });
 });
 
 /* ============================== WATCH ============================== */
@@ -73,26 +71,8 @@ gulp.task('watch', function () {
 		gulp.run('styles');
 	});
 
-	var conn = getFtpConnection();
-    gulp.watch(localFilesGlob)
-    .on('change', function(event) {
-      console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
-      return gulp.src( [event.path], { base: '.', buffer: false } )
-        .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
-        .pipe( conn.dest( remoteFolder ) )
-      ;
-    });
-});
-
-gulp.task('ftp-deploy-watch', function() {
-	    var conn = getFtpConnection();
-	    gulp.watch(localFilesGlob)
-	    .on('change', function(event) {
-	      console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
-	      return gulp.src( [event.path], { base: '.', buffer: false } )
-	        .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
-	        .pipe( conn.dest( remoteFolder ) )
-	      ;
-	    });
+	gulp.watch('./../SIte_sensual_2016/**/*', function (event) {
+		gulp.run('push');
 	});
+});
 
